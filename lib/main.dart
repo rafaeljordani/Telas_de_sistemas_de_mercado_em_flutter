@@ -123,8 +123,132 @@ class MainApp extends StatelessWidget {
                   ),
                 ),
               ),
+
+              const Expanded(
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.symmetric(vertical: 16.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            'Categorias',
+                            style: TextStyle(
+                              fontSize: 24,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          Text(
+                            'Ver todas',
+                            style: TextStyle(
+                              fontSize: 15,
+                              fontWeight: FontWeight.w500,
+                              color: Color(0xff148C4D),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Wrap(
+                      spacing: 10,
+                      runSpacing: 10,
+                      children: [
+                        ContainerCategoria(
+                          urlImg: 'assets/images/Folha.png',
+                          bagGrond: Color(0xffDEF5D6),
+                          texto: 'Hortifruti',
+                        ),
+                        ContainerCategoria(
+                          urlImg: 'assets/images/Asset.png',
+                          bagGrond: Color(0xffDBF0FF),
+                          texto: 'Laticínios',
+                        ),
+                        ContainerCategoria(
+                          urlImg: 'assets/images/Asset-2.png',
+                          bagGrond: Color(0xffFFE0DB),
+                          texto: 'Carnes',
+                        ),
+                        ContainerCategoria(
+                          urlImg: 'assets/images/Asset-3.png',
+                          bagGrond: Color(0xffFFEDC7),
+                          texto: 'Padaria',
+                        ),
+                        ContainerCategoria(
+                          urlImg: 'assets/images/Asset-4.png',
+                          bagGrond: Color(0xffE5E0FF),
+                          texto: 'Limpeza',
+                        ),
+                        ContainerCategoria(
+                          urlImg: 'assets/images/Asset-5.png',
+                          bagGrond: Color(0xffFFE5F0),
+                          texto: 'Bebidas',
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
             ],
           ),
+        ),
+      ),
+    );
+  }
+}
+
+class ContainerCategoria extends StatelessWidget {
+  const ContainerCategoria({
+    super.key,
+    required this.urlImg,
+    required this.bagGrond,
+    required this.texto,
+  });
+
+  final String urlImg;
+  final Color bagGrond;
+  final String texto;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 119,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(15),
+        color: const Color(0xffFFFFFF),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withAlpha(20),
+            blurRadius: 10,
+            spreadRadius: 2,
+            offset: const Offset(0, 4),
+          ),
+        ],
+      ),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 20),
+        child: Column(
+          children: [
+            Container(
+              height: 50,
+              width: 50,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(30),
+                color: bagGrond,
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Image.asset(urlImg, fit: BoxFit.contain),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 8.0),
+              child: Text(
+                texto,
+                style: const TextStyle(fontWeight: FontWeight.bold),
+              ),
+            ),
+          ],
         ),
       ),
     );

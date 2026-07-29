@@ -38,6 +38,10 @@ class MainApp extends StatelessWidget {
                 color: const Color(0xffD6F0DE),
                 borderRadius: BorderRadius.circular(32),
               ),
+              child: Padding(
+                padding: const EdgeInsets.all(15.0),
+                child: Image.asset('assets/images/Icon.png'),
+              ),
             ),
           ],
         ),
@@ -117,6 +121,10 @@ class MainApp extends StatelessWidget {
                         decoration: BoxDecoration(
                           color: const Color(0xffF2BF2E),
                           borderRadius: BorderRadius.circular(40),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(32.0),
+                          child: Image.asset('assets/images/Imagem.png'),
                         ),
                       ),
                     ],

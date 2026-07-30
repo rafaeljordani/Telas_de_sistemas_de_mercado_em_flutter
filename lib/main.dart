@@ -200,6 +200,16 @@ class MainApp extends StatelessWidget {
             ],
           ),
         ),
+        bottomNavigationBar: BottomNavigationBar(
+          selectedItemColor: Colors.grey.shade700,
+          items: const [
+            BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Perfil'),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.settings),
+              label: 'Configurações',
+            ),
+          ],
+        ),
       ),
     );
   }
